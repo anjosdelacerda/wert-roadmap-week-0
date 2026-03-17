@@ -19,17 +19,17 @@ const ingredientes = {
 };
 
 const pratoQueEuComo = pratos.find(function (prato, index, array) {
-  const ingredienteDetestavelEncontrado = prato.ingredientes.find(
+  const ingredienteDetestavelNaoEncontrado = prato.ingredientes.find(
     (ingrediente) => {
       return this.ingredientesDetestaveis.find((ing) => ing === ingrediente);
     },
   );
 
-  if (ingredienteDetestavelEncontrado && index === array.length - 1) {
+  if (ingredienteDetestavelNaoEncontrado && index === array.length - 1) {
     return true;
   }
 
-  return ingredienteDetestavelEncontrado === undefined;
+  return ingredienteDetestavelNaoEncontrado === undefined;
 }, ingredientes);
 
 console.log(pratoQueEuComo);
